@@ -23,8 +23,6 @@ steps:
     inputs:
       command: 'validate'
       allowTelemetryCollection: true
+      environmentServiceName: 'Aseem-Azure Sub'
 
-  - task: TerraformCLI@0
-    inputs:
-      command: 'plan'
-      allowTelemetryCollection: true
+  
