@@ -1,1 +1,8 @@
-# cap_azure_pipeline
+# pe-chapter-iac-pathway-cohort2-squad2
+Azure team
+
+# Members 
+ -Abraham
+ -Belal
+ -Zain
+ -Tom

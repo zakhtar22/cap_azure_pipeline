@@ -1,0 +1,95 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "uksouth"
+        },
+        "subnetName": {
+            "value": "devenvnetsu1405"
+        },
+        "virtualNetworkId": {
+            "value": "subscriptions/d670a631-8ed5-4b6c-b592-b7ce591aa614/resourceGroups/devenvinfrg1401/providers/Microsoft.Network/virtualNetworks/devenvnetvn1401"
+        },
+        "virtualMachineName": {
+            "value": "DEVARCBESSV1405"
+        },
+        "vmSize": {
+            "value": "Standard_NV4as_v4"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "dataDisks": {
+            "value": [
+                {
+                    "lun": 0,
+                    "createOption": "attach",
+                    "caching": "None",
+                    "writeAcceleratorEnabled": false,
+                    "id": null,
+                    "name": "DEVARCBESSV1405_DataDisk_0",
+                    "storageAccountType": null,
+                    "diskSizeGB": null,
+                    "diskEncryptionSet": null
+                }
+            ]
+        },
+        "dataDiskResources": {
+            "value": [
+                {
+                    "name": "DEVARCBESSV1405_DataDisk_0",
+                    "sku": "StandardSSD_LRS",
+                    "properties": {
+                        "diskSizeGB": 256,
+                        "creationData": {
+                            "createOption": "empty"
+                        }
+                    }
+                }
+            ]
+        },
+        "adminUsername": {
+            "value": "capgeminiadmin"
+        },
+        "adminPassword": {
+            "value": "GEN-PASSWORD"
+        },
+        "patchMode": {
+            "value": "Manual"
+        },
+        "enableHotpatching": {
+            "value": false
+        },
+        "zone": {
+            "value": "1"
+        },
+        "sku": {
+            "value": "2019-datacenter-gensecond"
+        },
+        "StaticIP": {
+            "value": "10.196.42.8"
+        },
+        "domainJoinUserName": {
+            "value": "testds\\svc-dom-join"
+        },
+        "domainJoinUserPassword": {
+            "value": "GEN-PASSWORD"
+        },
+        "domainFQDN": {
+            "value": "testds.ntnl"
+        },
+        "ouPath": {
+            "value": "OU=Servers 2019,DC=TESTDS,DC=NTNL"
+        },
+        "service_code": {
+            "value": "ENV"
+        },
+        "environment": {
+            "value": "ENV-DEV1"
+        },
+        "msasla": {
+            "value": "Bronze"
+        }
+    }
+}
