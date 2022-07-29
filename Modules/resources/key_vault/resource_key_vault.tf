@@ -38,6 +38,22 @@ resource "azurerm_key_vault" "example_key_vault" {
       "Get",
     ] */
   }
+  access_policy {
+    tenant_id = data.azurerm_client_config.current.tenant_id
+    object_id = data.azurerm_client_config.current.object_id
+
+    key_permissions = [
+      "Get","Create",
+    ]
+
+    secret_permissions = [
+      "Get","Set","List","Delete","Purge","Restore",
+    ]
+
+    /* storage_permissions = [
+      "Get",
+    ] */
+  }
 }
 
 resource "azurerm_key_vault_secret" "example" {
