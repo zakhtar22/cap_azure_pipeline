@@ -18,7 +18,14 @@ steps:
     displayName: Intialize
     inputs:
       command: 'init'
-      allowTelemetryCollection: true
+      backendType: 'azurerm'
+      backendServiceArm: 'Azure subscription 1(e83f45e6-ab20-4d00-9b9a-5bf804ca39bd)'
+      backendAzureRmResourceGroupName: 'Zain-Terraform'
+      backendAzureRmStorageAccountName: 'zainterraformuks'
+      backendAzureRmContainerName: 'zainterratrain'
+      backendAzureRmKey: 'terraform.tfstate'
+      backendAzureRmResourceGroupLocation: 'uksouth'
+      ensureBackend: true
 
   - task: TerraformCLI@0
     displayName: Validation
