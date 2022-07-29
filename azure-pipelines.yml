@@ -15,17 +15,20 @@ steps:
       terraformVersion: 'latest'
 
   - task: TerraformCLI@0
+    displayName: Intialize
     inputs:
       command: 'init'
       allowTelemetryCollection: true
 
   - task: TerraformCLI@0
+    displayName: Validation
     inputs:
       command: 'validate'
       allowTelemetryCollection: true
 
 
   - task: TerraformCLI@0
+    displayName: Planning
     inputs:
       command: 'plan'
       runAzLogin: true
