@@ -116,7 +116,7 @@ func TestApply_MultiInstance_SingleRegion_AvailZone(t *testing.T) {
 func TestApply_SingleInstance_MultiRegion_AvailZone_AvailSet(t *testing.T) {
 
 	// Variables
-	locations := []string{"UK South", "France Central"}
+	locations := []string{"UK South", "North Europe"}
 	instance_count := 1
 
 	// retryable errors in terraform testing.

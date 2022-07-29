@@ -133,7 +133,7 @@ func Test_SingleInstance_SingleRegion(t *testing.T) {
 // func Test_SingleInstance_MultiRegion_AvailZone_AvailSet(t *testing.T) {
 // 	t.Parallel()
 // 	// Variables
-// 	locations := []string{"UK South", "France Central"}
+// 	locations := []string{"UK South", "North Europe"}
 // 	instance_count := 1
 
 // 	// retryable errors in terraform testing.
