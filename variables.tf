@@ -64,7 +64,7 @@ variable "data_disk_count" {
 variable "unique_ID" {
   description = "Unique ID"
   type = string
-  default = "847"
+  default = "001"
 }
 
 variable "azure_tmp" {

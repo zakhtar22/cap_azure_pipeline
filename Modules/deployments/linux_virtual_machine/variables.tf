@@ -126,5 +126,5 @@ variable "vm_data_disk_size" {
 variable "unique_ID" {
   description = "Unique ID"
   type = string
-  default = "847"
+  default = "001"
 }
