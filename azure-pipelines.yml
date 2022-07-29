@@ -34,3 +34,11 @@ steps:
       runAzLogin: true
       allowTelemetryCollection: true
       environmentServiceName: 'Aseem-Azure Sub'
+
+  - task: TerraformCLI@0
+    displayName: Application
+    inputs:
+      command: 'apply'
+      runAzLogin: true
+      allowTelemetryCollection: true
+      environmentServiceName: 'Aseem-Azure Sub'
