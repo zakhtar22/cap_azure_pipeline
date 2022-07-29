@@ -5,7 +5,7 @@ variable "location" {
   type        = list(string)
   description = "Azure Region"
   default = ["UK South",
-  "France Central"]
+  "North Europe"]
 }
 
 variable "azure_resource_group_name" {
@@ -43,7 +43,7 @@ variable "network_address" {
   description = "Network address space"
   default = {
     "UK South"     = "10.0.0.0/22"
-    "France Central" = "10.1.0.0/22"
+    "North Europe" = "10.1.0.0/22"
   }
 }
 
@@ -64,7 +64,7 @@ variable "platform_location_az_count" {
   type        = map(string)
   default = {
     "UK South"     = 3
-    "France Central" = 3
+    "North Europe" = 3
   }
 }
 
