@@ -12,7 +12,11 @@ pool:
 variables:
 - group: backend_variable_group_zain
 
-steps:
+jobs:
+- job: Terraform_Validate
+  displayName: 'Terraform Validate'
+
+  steps:
   - task: TerraformInstaller@0
     inputs:
       terraformVersion: 'latest'
@@ -21,20 +25,21 @@ steps:
     displayName: Intialize
     inputs:
       command: 'init'
-      backendType: $(backendType)
+      backendType: azurerm
       backendServiceArm: $(backendServiceArm)
       backendAzureRmResourceGroupName: $(backendAzureRmResourceGroupName)
       backendAzureRmStorageAccountName: $(backendAzureRmStorageAccountName)
       backendAzureRmContainerName:  $(backendAzureRmContainerName)
       backendAzureRmKey: $(backendAzureRmKey)
       backendAzureRmResourceGroupLocation: $(backendAzureRmResourceGroupLocation)
-      ensureBackend: $(ensureBackend)
+      ensureBackend: true
 
   - task: TerraformCLI@0
     displayName: Validation
     inputs:
       command: 'validate'
       allowTelemetryCollection: true
+
 
 
   - task: TerraformCLI@0
@@ -44,6 +49,8 @@ steps:
       runAzLogin: true
       allowTelemetryCollection: true
       environmentServiceName: $(backendServiceArm)
+      publishPlanResults: 'plan-results'
+      commandOptions: '-out plan-results.tfplan'
 
   - task: TerraformCLI@0
     displayName: Application
@@ -52,6 +59,7 @@ steps:
       runAzLogin: true
       allowTelemetryCollection: true
       environmentServiceName: $(backendServiceArm)
+      commandOptions: 'plan-results.tfplan'
 
   - task: TerraformCLI@0
     displayName: Destruction
