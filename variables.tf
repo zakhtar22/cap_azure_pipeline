@@ -1,5 +1,6 @@
 ######################
 ###VARIABLES##########
+######################
 
 variable "location" {
   type        = list(string)
