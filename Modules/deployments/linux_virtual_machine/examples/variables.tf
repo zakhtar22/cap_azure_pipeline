@@ -71,5 +71,5 @@ variable "platform_location_az_count" {
 variable "unique_ID" {
   description = "Unique ID"
   type = string
-  default = "001"
+  default = "0847"
 }

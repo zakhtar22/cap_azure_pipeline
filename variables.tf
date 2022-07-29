@@ -1,6 +1,7 @@
 ######################
 ###VARIABLES##########
 ######################
+######################
 
 variable "location" {
   type        = list(string)
@@ -63,7 +64,7 @@ variable "data_disk_count" {
 variable "unique_ID" {
   description = "Unique ID"
   type = string
-  default = "001"
+  default = "0847"
 }
 
 variable "azure_tmp" {
