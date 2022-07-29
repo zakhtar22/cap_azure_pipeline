@@ -12,11 +12,7 @@ pool:
 variables:
 - group: backend_variable_group_zain
 
-jobs:
-- job: Terraform_Validate
-  displayName: 'Terraform Validate'
-
-  steps:
+steps:
   - task: TerraformInstaller@0
     inputs:
       terraformVersion: 'latest'
