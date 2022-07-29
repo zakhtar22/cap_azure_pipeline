@@ -101,7 +101,7 @@ variable "platform_location_az_count" {
   type        = map(string)
   default = {
     "UK South"     = 3
-    "North Europe" = 0
+    "France Central" = 0
   }
 }
 
