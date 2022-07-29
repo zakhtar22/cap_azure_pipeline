@@ -11,7 +11,7 @@ variable "location" {
 variable "azure_resource_group_name" {
   type        = string
   description = "Resource Group Name"
-  default     = "example-resources"
+  default     = "zain-resources"
 }
 
 variable "resource_name" {
