@@ -9,6 +9,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+- group: backend_variable_group_zain
+
 steps:
   - task: TerraformInstaller@0
     inputs:
@@ -18,14 +21,14 @@ steps:
     displayName: Intialize
     inputs:
       command: 'init'
-      backendType: 'azurerm'
-      backendServiceArm: 'Azure subscription 1(e83f45e6-ab20-4d00-9b9a-5bf804ca39bd)'
-      backendAzureRmResourceGroupName: 'Zain-Terraform'
-      backendAzureRmStorageAccountName: 'zainterraformuks'
-      backendAzureRmContainerName: 'zainterratrain'
-      backendAzureRmKey: 'terraform.tfstate'
-      backendAzureRmResourceGroupLocation: 'uksouth'
-      ensureBackend: true
+      backendType: $(backendType)
+      backendServiceArm: $(backendServiceArm)
+      backendAzureRmResourceGroupName: $(backendAzureRmResourceGroupName)
+      backendAzureRmStorageAccountName: $(backendAzureRmStorageAccountName)
+      backendAzureRmContainerName:  $(backendAzureRmContainerName)
+      backendAzureRmKey: $(backendAzureRmKey)
+      backendAzureRmResourceGroupLocation: $(backendAzureRmResourceGroupLocation)
+      ensureBackend: $(ensureBackend)
 
   - task: TerraformCLI@0
     displayName: Validation
@@ -40,7 +43,7 @@ steps:
       command: 'plan'
       runAzLogin: true
       allowTelemetryCollection: true
-      environmentServiceName: 'Aseem-Azure Sub'
+      environmentServiceName: $(backendServiceArm)
 
   - task: TerraformCLI@0
     displayName: Application
@@ -48,4 +51,4 @@ steps:
       command: 'apply'
       runAzLogin: true
       allowTelemetryCollection: true
-      environmentServiceName: 'Aseem-Azure Sub'
+      environmentServiceName: $(backendServiceArm)
