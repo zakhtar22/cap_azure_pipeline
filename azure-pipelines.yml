@@ -52,3 +52,10 @@ steps:
       runAzLogin: true
       allowTelemetryCollection: true
       environmentServiceName: $(backendServiceArm)
+
+  - task: TerraformCLI@0
+    displayName: Destruction
+    inputs:
+      command: 'destroy'
+      allowTelemetryCollection: true
+      environmentServiceName: $(backendServiceArm)
